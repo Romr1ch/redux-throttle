@@ -1,7 +1,7 @@
 import type { Middleware, AnyAction } from 'redux'
 import isEqual from 'lodash.isequal'
 
-const throttles: (AnyAction | null)[] = []
+const throttles: AnyAction[] = []
 
 function throttleActionsMiddleware(delay = 60): Middleware<{}, AnyAction> {
   return () => (next) => (action) => {
